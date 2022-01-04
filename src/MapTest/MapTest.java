@@ -6,7 +6,6 @@ import java.util.Map;
 public class MapTest {
     public static void main(String[] args) {
         HashMap<Integer,String> temp = new HashMap<>();
-        //全部放在tab[1]的位置
         temp.put(1,"one");
         temp.put(17,"two");
         temp.put(33,"three");
