@@ -71,6 +71,58 @@ public class TestStreamAPI3 {
 
     @Test
     public void test4() {
-        
+        Optional<Double> max = emps.stream().map(Employee::getSalary).collect(Collectors.maxBy(Double::compare));
+        System.out.println("最大值是" + max.get());
+        Optional<Employee> maxSalary = emps.stream().collect(Collectors.maxBy((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary())));
+        System.out.println("年薪最多的是" + maxSalary.get());
+        Double sum = emps.stream().collect(Collectors.summingDouble(m->m.getSalary()));
+        System.out.println("发出的总工资是" + sum);
+        Double avg = emps.stream().collect(Collectors.averagingDouble(Employee::getSalary));
+        System.out.println("平均工资是" + avg);
+        Long amount = emps.stream().collect(Collectors.counting());
+        System.out.println("工人总数是" + amount);
+        System.out.println("----------------");
+        DoubleSummaryStatistics sumSalary = emps.stream().collect(Collectors.summarizingDouble(e -> e.getSalary()));
+        System.out.println(sumSalary);
+    }
+
+    //实现分组功能
+    @Test
+    public void test5() {
+        Map<Status,List<Employee>> map = emps.stream().collect(Collectors.groupingBy(employee -> employee.getStatus()));
+        System.out.println(map);
+    }
+
+    //多级分组
+    @Test
+    public void test6() {
+        Map<Status, Map<String, List<Employee>>> collect = emps.stream().collect(Collectors.groupingBy(Employee::getStatus, Collectors.groupingBy(
+                emp -> {
+                    if (emp.getAge() < 20) {
+                        return "青年";
+                    } else if (emp.getAge() >= 20 && emp.getAge() < 40) {
+                        return "中年";
+                    } else {
+                        return "老年";
+                    }
+                }
+        )));
+        System.out.println(collect);
+    }
+
+    //分区
+    @Test
+    public void test7() {
+        Map<Boolean, List<Employee>> booleanListMap = emps.stream().collect(Collectors.partitioningBy(employee -> employee.getSalary() > 5000));
+        System.out.println(booleanListMap);
+    }
+
+    @Test
+    public void test8(){
+        String str = emps.stream()
+                .map(Employee::getName)
+                .collect(Collectors.joining("," , "----", "----"));
+
+        System.out.println(str);
     }
 }

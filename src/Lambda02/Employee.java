@@ -58,10 +58,6 @@ public class Employee {
         this.id = id;
     }
 
-    public Employee(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public int getId() {
         return id;
