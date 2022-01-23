@@ -18,7 +18,7 @@ public class TestMethodRef {
         System.out.println(employees.length);
     }
 
-    
+
 
     @Test
     public void test5() {
