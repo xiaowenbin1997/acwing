@@ -3,10 +3,7 @@ package dealwithstring;
 import org.junit.jupiter.api.Test;
 
 import javax.print.DocFlavor;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class DealString {
@@ -18,6 +15,8 @@ public class DealString {
         strCount.put("王五",2);
         strCount.put("赵六",3);
         Set<Map.Entry<String, Integer>> entries = strCount.entrySet();
-        entries.forEach(System.out::println);
+        List<String> list = Arrays.asList("啊", "吧", "从", "中", "中国");
+        list.stream().sorted((s1,s2) -> s2.compareTo(s1)).forEach(System.out::println);
+//        entries.forEach(System.out::println);
     }
 }
