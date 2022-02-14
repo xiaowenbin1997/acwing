@@ -5,14 +5,16 @@ import java.util.Map;
 
 public class MapTest {
     public static void main(String[] args) {
-        mapTest02();
+        newMap();
     }
 
     //演示newMap，说明初始化map一定会初始化成2的幂次，顺便说明同一个hash同一个值，value会更新
     public static void newMap() {
-        HashMap<Integer,String> test = new HashMap<>(11);
-        test.put(1,"1");
-        test.put(1,"one");
+        HashMap<Integer,String> test01 = new HashMap<>(11);
+        HashMap<Integer,String> test02 = new HashMap<>(27);
+        HashMap<Integer,String> test03 = new HashMap<>(49);
+        test01.put(1,"1");
+        test01.put(1,"one");
     }
     //演示链表，说明一定条件下，HashMap的底层由数组加链表实现
     public static void mapByList() {
