@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class MapTest {
     public static void main(String[] args) {
-        newMap();
+//        newMap();
+//        mapByList();
+        mapEnhance();
     }
 
     //演示newMap，说明初始化map一定会初始化成2的幂次，顺便说明同一个hash同一个值，value会更新
@@ -25,7 +27,7 @@ public class MapTest {
     }
     //演示resize，演示当数组的一个位置有长度为8的链表时，进行扩容操作，扩容的目的是将数组翻倍，然后把原本在数组【1】位置的链表
     //一分为二，再放到数组【1 + 16】的位置上去
-    public static void mapByTree() {
+    public static void mapEnhance() {
         HashMap<Integer,String> temp = new HashMap<>();
         temp.put(1,"one");
         temp.put(17,"two");
