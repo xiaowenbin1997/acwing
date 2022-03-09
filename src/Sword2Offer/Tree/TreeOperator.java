@@ -4,9 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
-public class InitTree {
+
+/**
+ * 记录一些树的操作
+ */
+public class TreeOperator {
     //返回一个二叉树
     public TreeNode initTreeByArrays(String[] arrs) {
         if (arrs == null || arrs.length == 0) {
@@ -34,9 +40,23 @@ public class InitTree {
         return strings;
     }
 
-    public static void main(String[] args) throws IOException {
-        InitTree initTree = new InitTree();
-        String[] strings = initTree.initStrings();
-        initTree.initTreeByArrays(strings);
+    //层次遍历输出树
+    public static void printTree(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while ()
+        }
+    }
+
+    //输出k个空格
+    private static void printBlank(int k) {
+        for (int i = 0; i < k; i++) {
+            System.out.print(" ");
+        }
     }
 }
