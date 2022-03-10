@@ -6,6 +6,8 @@ public class JZ7Test {
         String inOrder = "4,7,2,1,5,3,8,6";
         int[] pre = str2int(preOrder);
         int[] vin = str2int(inOrder);
+        Solution solution = new Solution();
+        TreeNode treeNode = solution.reConstructBinaryTree(pre, vin);
 
     }
 

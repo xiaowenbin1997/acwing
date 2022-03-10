@@ -40,18 +40,18 @@ public class TreeOperator {
         return strings;
     }
 
-    //层次遍历输出树
-    public static void printTree(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            while ()
-        }
-    }
+//    //层次遍历输出树
+//    public static void printTree(TreeNode root) {
+//        if (root == null) {
+//            return;
+//        }
+//        Queue<TreeNode> queue = new LinkedList<>();
+//        queue.offer(root);
+//        while (!queue.isEmpty()) {
+//            int size = queue.size();
+//            while ()
+//        }
+//    }
 
     //输出k个空格
     private static void printBlank(int k) {
